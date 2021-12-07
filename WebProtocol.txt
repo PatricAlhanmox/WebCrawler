@@ -1,0 +1,16 @@
+http protocol:
+    - client requesting the web server
+
+    - requesting head information:
+        User agent: 请求载体的身份和标识
+        Connection: 请求完毕后是断开连接还是保持连接
+
+    - Respond head information:
+        - Content-Type: 服务器相应会客户端的数据类型
+
+https protocol:
+    - 安全的http protocol
+    - 加密方式： 对称，非对称， 证书。
+
+检测与反检测：
+    - UA 检测与 UA 伪装（webcrawl）
