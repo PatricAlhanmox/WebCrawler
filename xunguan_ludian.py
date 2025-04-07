@@ -13,7 +13,7 @@ if __name__ == "__main__":
         "Accept-Language": "zh-CN,zh;q=0.9"
     
     }
-    url = "http://fms.cafuc.edu.cn/login.htm"
+    url = "http://fms.cafuc.edu.cn/login.html"
     #模拟登陆
     options = webdriver.ChromeOptions()
 
