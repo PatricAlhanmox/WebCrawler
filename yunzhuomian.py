@@ -30,6 +30,7 @@ if __name__ == "__main__":
     input_username = browsers.find_element(By.NAME, value="loginName")
     input_username.send_keys('210106198409154371')
     time.sleep(2)
+
     input_password = browsers.find_element(By.NAME, value="password")
     input_password.send_keys('Shy!840915')
     time.sleep(1)
@@ -37,9 +38,8 @@ if __name__ == "__main__":
     input_valid = input("输下验证码： ")
     validation = browsers.find_element(By.NAME, value="image_uf")
     validation.send_keys(input_valid)
-    time.sleep(4)
+    time.sleep(3)
     
     button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "icon-key")))
     button.click()
-
-    time.sleep(15)
+    time.sleep(10)
