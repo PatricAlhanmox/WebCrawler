@@ -1,0 +1,1023 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>训练课程记录查询</title>
+
+
+
+
+
+
+
+
+
+<link href="/wd/css/base.css" rel="stylesheet" type="text/css">
+<link href="/wd/components/othniel/othniel.css?r=20150324" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/wd/components/lib/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	var baseUrl = "/";
+	var sessionId = "D40FAC16F729488B252BBB2A3721D9C8";
+	$(function(){
+		$.ajaxSetup({
+			cache:false
+		})
+		
+	});
+	function back(){
+		var backUrl=document.referrer;
+		window.location.href=backUrl;
+	}
+
+
+</script>
+<script type="text/javascript" src="/wd/components/lib/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="/wd/components/lib/SheepUtil.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/wd/components/list/list2/css/list2.css?r=20150324">
+<script language="JavaScript" type="text/javascript" src="/wd/components/list/list2/js/list.js?r=20150324"></script>
+<script language="JavaScript" type="text/javascript" src="/wd/components/list/list2/js/commonList.js?r=20150324"></script>
+<script language="Javascript" type="text/javascript" src="/wd/components/dateJs/WdatePicker.js"></script><link href="https://fms.cafuc.edu.cn/wd/components/dateJs/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/wd/components/laydate/laydate.js"></script><link rel="stylesheet" href="https://fms.cafuc.edu.cn/wd/components/laydate/theme/default/laydate.css?v=5.0.9" id="layuicss-laydate">
+<link href="/wd/components/othniel/othniel.css?r=20150324" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript">
+var tableObj;
+var commListObj;
+$(function() {
+	tableObj = new Table("subjectTrainingRecord");
+	commListObj = new CommonList("","subjectTrainingRecord");
+	commListObj.pageSizeSelect.val("10");
+	commListObj.revertBack("");
+	DateCreator.createAll();
+});
+</script>
+</head>
+<body>
+<form id="ListForm" name="/subjectTrainingRecord/list.htm" action="/subjectTrainingRecord/list.htm" method="post">
+<!-- 翻页所需参数 -->
+<input id="caseHql" type="hidden" name="caseHql" value="">
+<input id="conditionInfo" type="hidden" name="conditionInfo" value="">
+<input id="googleSize" type="hidden" name="googleSize" value="">
+<input id="intPage" type="hidden" name="intPage" value="1">
+<input id="queryStatus" type="hidden" name="queryStatus" value="intPage=1&amp;pageSize=10&amp;googleSize=7">
+<input id="taxisStatus" type="hidden" name="taxisStatus" value="">
+<input id="taxisFieldName" type="hidden" name="taxisFieldName" value="">
+<input id="pageSize" type="hidden" name="pageSize" value="10">
+<div class="listStyleOne_box" id="gxz">
+  <h1 class="formStyleTwo_h1">
+    <p class="fstb_h1">训练课程记录查询</p>
+    <p id="listCreateBtnContainer" class="fsth1_rb" style="display:none">
+		<a id="listCreateBtn" href="javascript:;" class="otnButton1 otnb1_green otnb1Ico"><b class="otnIco otnico_add"></b></a>
+	</p>
+    <p id="listExportBtnContainer" class="fsth1_rb" style="display:none">
+		<a id="listExportBtn" href="javascript:;" class="otnButton1 otnb1_green otnb1Ico"><b class="otnIco otnico_download"></b></a>
+	</p>
+    <b class="fstb_left"></b><b class="fstb_right"></b></h1>
+  <dl id="form_box" class="form_box">
+	<dt class="dt_before"><a href="javascript:;">条件过滤( <input type="button" value=" " class="search_img"> 精确查找 )</a></dt>
+	<dd style="display: none;">
+	   <ul id="conditionContainer"><li class="table_form_box_li preCondition">
+	<label>学员：</label>
+	<input name="studentName" value="" class="xfy_text_before">
+	</li><li class="table_form_box_li preCondition">
+	<label>教员：</label>
+	<input name="teacherName" value="" class="xfy_text_before">
+	</li>
+	   
+	       
+	       <li class="table_form_box_li">
+	        <label>日期：<input group="o.trainingDate" type="hidden" value="o.trainingDate" condition="yes"></label>
+	          <select group="o.trainingDate" condition="yes">
+				<option value="like">包含</option>
+				<option value="=">=</option>
+			
+				<option value=">">大于</option>
+				<option value="<">小于</option>
+			
+				</select>
+	          
+				
+					<input type="text" group="o.trainingDate" class="xfy_text_before date" condition="yes" autocomplete="off">
+				
+				
+			  
+	      </li>
+	      
+	    
+	       
+	    
+	       
+	       <li class="table_form_box_li">
+	        <label>课程号：<input group="o.subjectNum" type="hidden" value="o.subjectNum" condition="yes"></label>
+	          <select group="o.subjectNum" condition="yes">
+				<option value="like">包含</option>
+				<option value="=">=</option>
+			
+				</select>
+	          
+				
+				
+					<input group="o.subjectNum" type="text" class="xfy_text_before" condition="yes">
+				
+			  
+	      </li>
+	      
+	    
+	       
+	       <li class="table_form_box_li">
+	        <label>课程名：<input group="o.subjectName" type="hidden" value="o.subjectName" condition="yes"></label>
+	          <select group="o.subjectName" condition="yes">
+				<option value="like">包含</option>
+				<option value="=">=</option>
+			
+				</select>
+	          
+				
+				
+					<input group="o.subjectName" type="text" class="xfy_text_before" condition="yes">
+				
+			  
+	      </li>
+	      
+	    
+	       
+	       <li class="table_form_box_li">
+	        <label>大纲：<input group="o.programName" type="hidden" value="o.programName" condition="yes"></label>
+	          <select group="o.programName" condition="yes">
+				<option value="like">包含</option>
+				<option value="=">=</option>
+			
+				</select>
+	          
+				
+				
+					<input group="o.programName" type="text" class="xfy_text_before" condition="yes">
+				
+			  
+	      </li>
+	      
+	    
+	       
+	    
+	       
+	    
+	       
+	    
+	       
+	    
+	       
+	    
+	   <li class="table_form_box_li condition">
+	<label>年份：</label>
+	<select id="selectYearGroup" name="selectYearGroup">
+	
+	<option value="2025">2025</option>
+	
+	<option value="2024">2024</option>
+	
+	<option value="2023">2023</option>
+	
+	<option value="2022">2022</option>
+	
+	<option value="2021">2021</option>
+	
+	<option value="2020">2020</option>
+	
+	<option value="2019">2019</option>
+	
+	<option value="2018">2018</option>
+	
+	<option value="2017">2017</option>
+	
+	<option value="2016">2016</option>
+	
+	<option value="2015">2015</option>
+	
+	</select>
+	</li><li class="table_form_box_li condition">
+	<label>记录状态：</label>
+	<select id="status" name="status">
+	<option value="">--全部--</option>
+	
+	<option value="WAITING_FILL">待填写</option>
+	
+	<option value="FILLED_OUT">已填写</option>
+	
+	</select>
+	
+	</li><li class="qin"></li></ul>
+	   <input id="xfy_serach" type="submit" class="xfy_button_before" value="开始查找">
+	   <input class="xfy_button_before" type="button" id="reset" value="重填">
+	   <input id="searchAll" type="button" class="xfy_button_before" value="查询全部">
+	   <div class="qin"></div> 
+	</dd>
+	</dl>
+	 
+
+
+<!-- 信息与工具按钮 -->
+      <div class="table_tool">
+	    <span class="tt_left">
+	     共有<strong>36</strong>页<strong>352</strong>条数据，每页
+		 <select class="pageSize">
+		 <option value="10">10</option>
+		 <option value="20">20</option>
+		 <option value="30">30</option>
+		 <option value="40">40</option>
+		 <option value="50">50</option>
+		 <option value="70">70</option>
+		 <option value="100">100</option>
+		 </select>
+		 
+          
+		</span>
+	    
+          <!-- 翻页 开始 -->
+	    <ul class="page_box">
+	     <li class="pb_button">
+	   
+	   
+	     <a href="javascript:;">首页</a>
+	   
+	     </li>
+	    
+         <li class="pb_button">
+         
+            <a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=36')" linkout="true">末页</a>
+		 
+		
+         </li>
+         
+        
+         
+            
+              <li><span>1</span></li>
+            
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=2')" linkout="true">2</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=3')" linkout="true">3</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=4')" linkout="true">4</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=5')" linkout="true">5</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=6')" linkout="true">6</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=7')" linkout="true">7</a></li>
+         
+         
+        
+	  </ul>
+	  <!-- 翻页 开始 -->
+  </div>
+      <link href="/wd/components/glayer3/glayer3.css" rel="stylesheet" type="text/css"><table cellpadding="0" id="xfy_table" cellspacing="0" class="xfy_table">
+      <tbody><tr class="tr_even">
+	   <th width="16px"><input title="选择全部" type="checkbox" id="total"></th>
+       
+			<th width="auto">
+			
+			
+			
+			
+			
+			日期
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			学员
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			课程号
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			课程名
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			大纲
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			教员
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			认可情况
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			<a href="javascript:CommonList.sort('/subjectTrainingRecord/list.htm','o.signed', 'asc');" title="向上排序">
+			签名
+			</a>
+			
+			
+			
+			</th>
+		
+			<th width="auto">
+			
+			
+			
+			
+			
+			是否结课
+			
+			
+			</th>
+		
+			<th width="10%">
+			
+			
+			
+			
+			
+			管理
+			
+			
+			</th>
+		
+     </tr>
+<script language="JavaScript" type="text/javascript" src="/wd/components/glayer3/glayer3.js"></script>
+
+
+	
+	
+	
+
+
+	
+    
+     <tr class="trB">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=06e49642875d36e20196478e68f1#06e49642875d36e20196478e68f1" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-18</td>
+	   <td>涂江勋</td>
+	   <td>FL 80</td>
+	   <td>本场空域</td>
+	   <td>2022商用驾驶员执照训练课程（多发飞机）(整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 未结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=06e49642875d36e20196478e68f1',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=06e49642875d36e20196478e68f1&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="tr_even">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=0a2a9642875d3c7501964790d8b9#0a2a9642875d3c7501964790d8b9" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-18</td>
+	   <td>黄麒瑞</td>
+	   <td>FL 34</td>
+	   <td>阶段检查</td>
+	   <td>2022私用驾驶员执照训练课程（整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   
+			   认可
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 已结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=0a2a9642875d3c7501964790d8b9',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=0a2a9642875d3c7501964790d8b9&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr>
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=0be69642875d35e601964791ca03#0be69642875d35e601964791ca03" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-18</td>
+	   <td>桑桦</td>
+	   <td>FL 47</td>
+	   <td>阶段检查</td>
+	   <td>2022仪表等级执照训练课程（整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   
+			   认可
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 已结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=0be69642875d35e601964791ca03',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=0be69642875d35e601964791ca03&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="trB tr_even">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=0e7a9642875d3ce301964793f4d6#0e7a9642875d3ce301964793f4d6" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-18</td>
+	   <td>张智帆</td>
+	   <td>FL 67</td>
+	   <td>学生机长训练</td>
+	   <td>2022商用驾驶员执照训练课程（单发飞机）(整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 未结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=0e7a9642875d3ce301964793f4d6',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=0e7a9642875d3ce301964793f4d6&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr>
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=2f949642875d4904019642a24de6#2f949642875d4904019642a24de6" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-17</td>
+	   <td>冯毅恒</td>
+	   <td>FL 78</td>
+	   <td>阶段检查</td>
+	   <td>2022商用驾驶员执照训练课程（单发飞机）(整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 已结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=2f949642875d4904019642a24de6',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=2f949642875d4904019642a24de6&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="trB tr_even">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=5ef495f5a4252a9d01964266b77c#5ef495f5a4252a9d01964266b77c" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-17</td>
+	   <td>刘嘉强</td>
+	   <td>FL 35</td>
+	   <td>综合课</td>
+	   <td>2022私用驾驶员执照训练课程（整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 未结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=5ef495f5a4252a9d01964266b77c',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=5ef495f5a4252a9d01964266b77c&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="trB">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=62d295f5a4254bcb01964268f201#62d295f5a4254bcb01964268f201" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-17</td>
+	   <td>张智帆</td>
+	   <td>FL 53</td>
+	   <td>商用机动飞行</td>
+	   <td>2022商用驾驶员执照训练课程（单发飞机）(整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 未结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=62d295f5a4254bcb01964268f201',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=62d295f5a4254bcb01964268f201&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="trB tr_even">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=64f495f5a4254dd10196426a1562#64f495f5a4254dd10196426a1562" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-17</td>
+	   <td>杨钶峻</td>
+	   <td>FL 47</td>
+	   <td>阶段检查</td>
+	   <td>2022仪表等级执照训练课程（整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 未结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=64f495f5a4254dd10196426a1562',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=64f495f5a4254dd10196426a1562&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="trB">
+	   <td style="border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=030f95f5a4252e1e01963d08480a#030f95f5a4252e1e01963d08480a" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td>2025-04-16</td>
+	   <td>梁威仑</td>
+	   <td>FTD 32</td>
+	   <td>夜间应急操作</td>
+	   <td>商用驾驶员执照训练课程（多发飞机）(整体）</td>
+	   <td>张旭</td>
+	   <td>
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td>
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td>
+			
+			 
+				 已结课
+			 
+		 </td>
+
+	   <td>
+
+		   
+			   
+				   
+				   
+					   <a href="javascript:;" title="该课程已结课，无法修改"><b class="ico ico_lock"></b></a>
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=030f95f5a4252e1e01963d08480a&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+     <tr class="trB tr_even">
+	   <td style="border-bottom-width: 0px; border-left-width: 0px;"><a href="/subjectTrainingRecord/show.htm?entityId=6cc195f5a4252cce01963cf9f696#6cc195f5a4252cce01963cf9f696" title="点击查看详细" target="_blank"><b class="ico ico_text"></b></a></td>
+	   <td style="border-bottom-width: 0px;">2025-04-16</td>
+	   <td style="border-bottom-width: 0px;">刘嘉强</td>
+	   <td style="border-bottom-width: 0px;">FL 35</td>
+	   <td style="border-bottom-width: 0px;">综合课</td>
+	   <td style="border-bottom-width: 0px;">2022私用驾驶员执照训练课程（整体）</td>
+	   <td style="border-bottom-width: 0px;">张旭</td>
+	   <td style="border-bottom-width: 0px;">
+		   
+			   <b class="otnButton2 otnb1_red">未确认</b>
+			   
+		   
+	   </td>
+
+		 <td style="border-bottom-width: 0px;">
+			
+			
+				
+				<span class="otnHintTxt2 otnHT2_gray">未签名</span>
+			
+		 </td>
+
+		 <td style="border-bottom-width: 0px;">
+			
+			 
+				 未结课
+			 
+		 </td>
+
+	   <td style="border-bottom-width: 0px;">
+
+		   
+			   
+				   
+					   <a onclick="SheepUtil.topParent(parent).glayer3('修改记录','/subjectTrainingRecord/update.htm?entityId=6cc195f5a4252cce01963cf9f696',1200)" href="javascript:;" title="修改"><b class="ico ico_edit"></b></a>
+				   
+				   
+			   
+
+		   
+
+		   
+		   <a onclick="glayer3('操作记录','/operatingLog/logs4persist.htm?entityId=6cc195f5a4252cce01963cf9f696&amp;className=bakSubjectTrainingRecord',1024,768)" href="javascript:;" title="操作记录"><b>操作记录</b></a>
+
+
+	   </td>
+	   
+	 </tr>
+	
+
+</tbody></table>
+     
+
+
+<!-- 信息与工具按钮 -->
+      <div class="table_tool">
+	    <span class="tt_left">
+	     共有<strong>36</strong>页<strong>352</strong>条数据，每页
+		 <select class="pageSize">
+		 <option value="10">10</option>
+		 <option value="20">20</option>
+		 <option value="30">30</option>
+		 <option value="40">40</option>
+		 <option value="50">50</option>
+		 <option value="70">70</option>
+		 <option value="100">100</option>
+		 </select>
+		 
+          
+		</span>
+	    
+          <!-- 翻页 开始 -->
+	    <ul class="page_box">
+	     <li class="pb_button">
+	   
+	   
+	     <a href="javascript:;">首页</a>
+	   
+	     </li>
+	    
+         <li class="pb_button">
+         
+            <a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=36')" linkout="true">末页</a>
+		 
+		
+         </li>
+         
+        
+         
+            
+              <li><span>1</span></li>
+            
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=2')" linkout="true">2</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=3')" linkout="true">3</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=4')" linkout="true">4</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=5')" linkout="true">5</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=6')" linkout="true">6</a></li>
+         
+         
+        
+         
+            
+         
+            <li><a href="javascript:SheepUtil.submitUrl('ListForm','/subjectTrainingRecord/list.htm?intPage=7')" linkout="true">7</a></li>
+         
+         
+        
+	  </ul>
+	  <!-- 翻页 开始 -->
+  </div>
+</div>
+</form>
+
+ <div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px;"><iframe src="https://fms.cafuc.edu.cn/wd/components/dateJs/My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div></body></html>
